@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Web.Resource;
 
 namespace MicrosoftIdentityWeb.Controllers
 {
@@ -20,7 +21,7 @@ namespace MicrosoftIdentityWeb.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet, RequiredScope("Forecast.Read")]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -30,6 +31,12 @@ namespace MicrosoftIdentityWeb.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost, RequiredScope("Forecast.Write")]
+        public IActionResult Add()
+        {
+            return Created();
         }
     }
 }
