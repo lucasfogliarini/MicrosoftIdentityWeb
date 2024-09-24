@@ -1,5 +1,7 @@
 # MicrosoftIdentityWeb
 
+Esta aplicação utiliza o pacote Microsoft.Identity.Web para gerenciar autenticação e autorização com o Microsoft Entra Id (Azure AD). Com essa integração, garantimos que apenas usuários autorizados possam acessar recursos protegidos, proporcionando uma experiência de uso segura e eficiente.
+
 #### Passo 1: Registrar o Aplicativo no Azure AD
 1. Acesse o Microsoft Entra Id no [Portal do Azure](https://portal.azure.com)
 2. Selecione App registrations.
@@ -15,13 +17,10 @@
 #### Passo 2: Expor a API com um Escopo
 Agora que o aplicativo está registrado, é necessário configurar a API para ser acessível por outros serviços ou aplicativos, expondo um escopo.
 
-Ir para as Configurações do Aplicativo:
-
-No menu lateral, selecione __Expose an API__.
-
-1. Clique no botão Set abaixo de Application ID URI.
-
-2. Adicionar um Escopo:
+1. Ir para as Configurações do Aplicativo
+2. No menu lateral, selecione __Expose an API__
+3. Clique no botão Set abaixo de Application ID URI
+4. Adicionar um Escopo:
    - Na seção Scopes defined by this API, clique em Add a scope.
    - __Scope name__ insira o nome do escopo como __Forecast.Read__.
    - __Who can consent?__, selecione Admins and users para permitir que tanto administradores quanto usuários possam consentir o uso do escopo.
@@ -42,14 +41,14 @@ No menu à esquerda, vá para __API permissions__.
 6. Clique em Add permissions.
 7. Clique em __Grant admin consent for {seu diretório}__
 
-#### Passo 4: Configurar o appsettings na MicrosoftIdentityWeb Apí
+#### Passo 4: Configurar o appsettings na MicrosoftIdentityWeb Api
 
- Adicione as credenciais no appsettings.json 
+1. Adicione as credenciais no __appsettings.json__
    Configurações da página  __Overview__ do aplicativo MicrosoftIdentityWeb
     - Directory (tenant) ID em __TenantId__
   	- Application (client) ID em __ClientId__
 	- Application ID URI em __Audience__
-
+	
    Configuração da página  __Overview__ do Tenant
 	- Primary Domain em __Domain__
 
