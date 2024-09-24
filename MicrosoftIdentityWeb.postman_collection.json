@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "81dc489d-7dda-4c9d-9b54-12b9759c8ff6",
+		"name": "MicrosoftIdentityWeb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "306790"
+	},
+	"item": [
+		{
+			"name": "Client Credentials Flow",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "{{scope}}",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/{{tenantId}}/oauth2/v2.0/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"{{tenantId}}",
+						"oauth2",
+						"v2.0",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorization Code Flow",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "{{clientSecret}}",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{clientId}}",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "{{scope}}",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/v2.0/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "https://login.microsoftonline.com/{{tenantId}}/oauth2/v2.0/authorize",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "MicrosoftIdentityWeb",
+							"type": "string"
+						},
+						{
+							"key": "useBrowser",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://oauth.pstmn.io/v1/callback",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7095/WeatherForecast",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7095",
+					"path": [
+						"WeatherForecast"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "tenantId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "clientSecret",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "clientId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
