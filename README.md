@@ -11,7 +11,9 @@ Esta aplicação utiliza o pacote Microsoft.Identity.Web para gerenciar autentic
 	- Supported account types: Single Tenant
 	- Redirect URI: 
 	  Plataform: Web
-	  Uri: https://oauth.pstmn.io/v1/callback (para testar com o postman)
+	  Uri:
+   		https://oauth.pstmn.io/v1/callback (para testar com o postman desktop)
+		https://oauth.pstmn.io/v1/browser-callback (para testar com o postman web)
     - Clique em __Register__ para concluir o processo de registro.
 
 #### Passo 2: Expor a API com um Escopo
