@@ -31,16 +31,19 @@ Clique em Add scope para finalizar a criação do escopo.
 
 #### Passo 3: Configurar Permissões de API
 
+No menu à esquerda, vá para __Owners__.
+
+1. Adicione seu usuário como Owner da aplicação para liberar a Api recém criada em __My APIs__
+
 No menu à esquerda, vá para __API permissions__.
 
-1. Espere alguns minutos para propagar a API com o escopo criado.
-2. Clique em Add a permission.
-3. Selecione a aba __My APIs__.
-4. Selecione a API que você acabou de registrar (no caso, MicrosoftIdentityWeb).
-5. Selecione Delegated Permissions
-6. Escolha o escopo __Forecast.Read__ criado anteriormente.
-7. Clique em Add permissions.
-8. Clique em __Grant admin consent for {seu diretório}__
+1. Clique em Add a permission.
+2. Selecione a aba __My APIs__.
+3. Selecione a API que você acabou de registrar (no caso, MicrosoftIdentityWeb).
+4. Selecione Delegated Permissions
+5. Escolha o escopo __Forecast.Read__ criado anteriormente.
+6. Clique em Add permissions.
+7. Clique em __Grant admin consent for {seu diretório}__
 
 #### Passo 4: Configurar o appsettings na MicrosoftIdentityWeb Api
 
